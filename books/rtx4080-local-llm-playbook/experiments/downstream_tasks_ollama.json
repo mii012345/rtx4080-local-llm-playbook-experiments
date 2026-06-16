@@ -1,0 +1,42 @@
+[
+  {
+    "label": "rag_from_fixed_context",
+    "model": "qwen3.5:4b",
+    "wall_sec": 48.205,
+    "eval_count": 512,
+    "eval_sec": 3.734,
+    "tok_per_sec_eval": 137.13,
+    "empty": true,
+    "response_preview": ""
+  },
+  {
+    "label": "code_completion_patch",
+    "model": "deepseek-coder-v2:16b",
+    "wall_sec": 60.298,
+    "eval_count": 512,
+    "eval_sec": 1.963,
+    "tok_per_sec_eval": 260.8,
+    "empty": false,
+    "response_preview": " 以下のように、`urllib.request.urlopen`を使用してHTTPリクエストを行い、JSONデータを取得する関数を修正します。タイムアウトとHTTPエラー処理を追加します。\n\n```python\nimport urllib.request\nimport json\nfrom functools import wraps\nimport time\n\ndef timeout(timeout_duration):\n    def decorator(func):\n        @wraps(func)\n        def wrapper(*args, **kwargs):\n            start = time.time()\n            result = func(*args, **kwargs)\n            if time.time() - start > timeout_duration:\n                raise TimeoutError(\"Function call timed out\")\n            return result\n        return wrapper\n    return decorator\n\n@timeout(5)  # 例えば、関数が実行されるのに5秒以上かかった場合にTimeoutErrorを発生させます。\ndef fetch_json(url):\n    try:\n        with urllib.request.urlopen(url, timeout=5"
+  },
+  {
+    "label": "tiny_web_app",
+    "model": "qwen3.5:4b",
+    "wall_sec": 4.082,
+    "eval_count": 512,
+    "eval_sec": 3.709,
+    "tok_per_sec_eval": 138.04,
+    "empty": false,
+    "response_preview": "```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>"
+  },
+  {
+    "label": "model_router_plan",
+    "model": "qwen3.5-9b-nothink:latest",
+    "wall_sec": 91.678,
+    "eval_count": 512,
+    "eval_sec": 5.479,
+    "tok_per_sec_eval": 93.45,
+    "empty": true,
+    "response_preview": ""
+  }
+]

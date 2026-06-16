@@ -1,0 +1,65 @@
+{
+  "created_at": "2026-06-16T14:06:17.619113+00:00",
+  "note": "n=1 cold-ish sequential run. wall_sec includes load/model-switch overhead; tok_per_sec uses Ollama eval_duration.",
+  "prompt": "日本語で、RTX 4080でローカルLLMを動かすメリットを5つ箇条書きで説明して。",
+  "options": {
+    "num_predict": 256,
+    "temperature": 0.2
+  },
+  "results": [
+    {
+      "model": "qwen3.5:0.8b",
+      "wall_sec": 15.836,
+      "eval_count": 256,
+      "eval_duration_sec": 0.814,
+      "prompt_eval_duration_sec": 0.014,
+      "tok_per_sec": 314.68,
+      "empty": true,
+      "response_preview": "",
+      "gpu_before": "NVIDIA GeForce RTX 4080, 16376 MiB, 94 MiB, 15844 MiB, 0 %, 46, 25.94 W, 590.48.01",
+      "gpu_after": "NVIDIA GeForce RTX 4080, 16376 MiB, 2216 MiB, 13722 MiB, 77 %, 53, 108.10 W, 590.48.01",
+      "raw_timings_ns": {
+        "total_duration": 15833200479,
+        "load_duration": 14849619635,
+        "prompt_eval_duration": 13585657,
+        "eval_duration": 813536443
+      }
+    },
+    {
+      "model": "qwen3.5:4b",
+      "wall_sec": 4.299,
+      "eval_count": 256,
+      "eval_duration_sec": 1.849,
+      "prompt_eval_duration_sec": 0.021,
+      "tok_per_sec": 138.43,
+      "empty": true,
+      "response_preview": "",
+      "gpu_before": "NVIDIA GeForce RTX 4080, 16376 MiB, 2216 MiB, 13722 MiB, 77 %, 53, 108.10 W, 590.48.01",
+      "gpu_after": "NVIDIA GeForce RTX 4080, 16376 MiB, 7613 MiB, 8325 MiB, 90 %, 60, 212.24 W, 590.48.01",
+      "raw_timings_ns": {
+        "total_duration": 4297550145,
+        "load_duration": 2285667292,
+        "prompt_eval_duration": 21128444,
+        "eval_duration": 1849345173
+      }
+    },
+    {
+      "model": "qwen3.5:9b",
+      "wall_sec": 5.189,
+      "eval_count": 256,
+      "eval_duration_sec": 2.733,
+      "prompt_eval_duration_sec": 0.027,
+      "tok_per_sec": 93.66,
+      "empty": true,
+      "response_preview": "",
+      "gpu_before": "NVIDIA GeForce RTX 4080, 16376 MiB, 7613 MiB, 8325 MiB, 90 %, 60, 209.20 W, 590.48.01",
+      "gpu_after": "NVIDIA GeForce RTX 4080, 16376 MiB, 15529 MiB, 410 MiB, 91 %, 62, 234.97 W, 590.48.01",
+      "raw_timings_ns": {
+        "total_duration": 5187825767,
+        "load_duration": 2262252604,
+        "prompt_eval_duration": 27249341,
+        "eval_duration": 2733325174
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "label": "cold_or_first",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 1.207,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 212.05,
+    "response_preview": "1. ローカル環境での学習と開発が可能: RTX 4080は、高速なGPUを使用することで、リアルタイムの学習と開発に適しています。これは、データの処理速度やパフォーマンスを向上させ、より効率的な研究や開発プロセスを実現します。  2. サ"
+  },
+  {
+    "label": "warm_1",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.585,
+    "completion_tokens": 247,
+    "tok_per_sec_wall": 421.89,
+    "response_preview": "1. **高速な計算能力**：RTX 4080は、高効率のGPUを使用することで、より多くのデータを処理することができ、ローカルLLM（ラボーランシング）を行うための最適な環境です。  2. **パフォーマンス向上**：高速な計算能力により"
+  },
+  {
+    "label": "warm_2",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.588,
+    "completion_tokens": 248,
+    "tok_per_sec_wall": 422.09,
+    "response_preview": "1. ローカル環境での学習効率：RTX 4080は、より多くのGPUを活用できるため、より効果的なローカルLLMの学習が可能になります。  2. システムパフォーマンス：RTX 4080は、より多くのGPUを使用することで、より効果的にシス"
+  },
+  {
+    "label": "warm_3",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.605,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 422.93,
+    "response_preview": "1. **高速な計算能力**：RTX 4080は、高性能のGPUを使用することで、より効率的なローカルLLM（言語モデル）の処理が可能になります。これにより、データの処理速度と精度が向上します。  2. **パフォーマンスの高いモデル**："
+  },
+  {
+    "label": "warm_4",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.605,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 422.93,
+    "response_preview": "1. **高速な計算能力**：RTX 4080は、高速なグラフィックカードで動作するため、ローカルのLLM（言語モデル）が高速に処理できることが特徴的です。  2. **高効率のパフォーマンス**：RTX 4080は、より多くのフレームワー"
+  },
+  {
+    "label": "warm_5",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.605,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 423.13,
+    "response_preview": "1. ローカル環境での学習効率：RTX 4080は、より多くのGPUを活用できるため、より効率的にローカルのLLM（大規模言語モデル）を学習することができます。  2. サイズの制限を満たす可能性：RTX 4080は、より多くのGPUを使用"
+  },
+  {
+    "label": "concurrent4_1",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.568,
+    "completion_tokens": 199,
+    "tok_per_sec_wall": 350.24,
+    "response_preview": "1. ローカル環境での学習と実践：RTX 4080は、高速なグラフィックスカードで、より効率的に学習と実践を行うことができます。  2. システムの安定性：RTX 4080は、高品質なグラフィックカードを使用することで、システムの安定性が向"
+  },
+  {
+    "label": "concurrent4_2",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.727,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 352.08,
+    "response_preview": "1. ローカル環境での学習と開発が可能：RTX 4080は、高速なGPUを使用することで、リアルタイムの学習と開発が可能です。これにより、より効率的かつ効果的な学習や開発を行うことができます。  2. システムパフォーマンス向上：高速なGP"
+  },
+  {
+    "label": "concurrent4_3",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.727,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 352.23,
+    "response_preview": "1. **高速な計算能力**：RTX 4080は、高速なグラフィックカードを使用することで、大量のデータを処理するための高速な計算能力が備えられています。これにより、ローカルLLM（言語モデル）の動作速度が大幅に向上します。  2. **高"
+  },
+  {
+    "label": "concurrent4_4",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.726,
+    "completion_tokens": 256,
+    "tok_per_sec_wall": 352.46,
+    "response_preview": "1. **高速な計算能力**：RTX 4080は、高性能のGPUを使用することで、大量のデータを処理するための高速な計算能力が備えられています。これは、ローカルLLM（言語モデル）の実行に大きな効果をもたらします。  2. **パフォーマン"
+  },
+  {
+    "label": "concurrent4_total",
+    "backend": "vllm",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "wall_sec": 0.728,
+    "completion_tokens": 967,
+    "tok_per_sec_wall": 1328.66
+  }
+]

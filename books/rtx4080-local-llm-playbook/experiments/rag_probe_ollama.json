@@ -1,0 +1,10 @@
+{
+  "label": "rag_from_fixed_context",
+  "model": "qwen3.5:4b",
+  "wall_sec": 25.078,
+  "eval_count": 512,
+  "eval_sec": 3.712,
+  "tok_per_sec_eval": 137.93,
+  "empty": true,
+  "response_preview": ""
+}

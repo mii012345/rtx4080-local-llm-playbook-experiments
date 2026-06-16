@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-06-16T14:06:56.861247+00:00",
+  "label": "manual_model_router_probe",
+  "router_rule": {
+    "draft": "qwen3.5:4b",
+    "code_patch": "deepseek-coder-v2:16b",
+    "rag_answer": "qwen3.5:9b"
+  },
+  "results": [
+    {
+      "task": "draft",
+      "model": "qwen3.5:4b",
+      "wall_sec": 2.636,
+      "eval_count": 320,
+      "eval_sec": 2.315,
+      "tok_per_sec_eval": 138.24,
+      "empty": true,
+      "response_preview": ""
+    },
+    {
+      "task": "code_patch",
+      "model": "deepseek-coder-v2:16b",
+      "wall_sec": 1.283,
+      "eval_count": 286,
+      "eval_sec": 1.073,
+      "tok_per_sec_eval": 266.6,
+      "empty": false,
+      "response_preview": " 以下は、Pythonで`urllib.request.urlopen`にタイムアウトとHTTPエラーの処理を追加する最小コード例です：\n\n```python\nimport urllib.request\n\ntry:\n    with urllib.request.urlopen('http://example.com', timeout=5) as response:\n        body = response.read()\n        print(body)\nexcept urllib.error.HTTPError as e:\n    print(\"HTTP Error:\", e.code, e.reason)\nexcept Exception as e:\n    print(\"Other Error:\", str(e))\n```\n\nこのコードでは、`urllib.request.urlopen`を使ってURLにアクセスしようとします。タイムアウトは5秒に設定されています。HTTPエラーが発生した場合、そのエラーコードと理由を表示します。その他の例外（例えばネットワークエラーなど）は、`Exception`で捕捉されて処理されます。"
+    },
+    {
+      "task": "rag_answer",
+      "model": "qwen3.5:9b",
+      "wall_sec": 6.601,
+      "eval_count": 320,
+      "eval_sec": 3.412,
+      "tok_per_sec_eval": 93.77,
+      "empty": true,
+      "response_preview": ""
+    }
+  ]
+}

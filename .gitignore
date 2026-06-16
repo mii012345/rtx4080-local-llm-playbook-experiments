@@ -1,0 +1,9 @@
+# Do not accidentally publish Zenn manuscript source in this experiment repo.
+books/*/[0-9][0-9].md
+books/*/config.yaml
+books/*/cover.png
+articles/
+zenn-content/
+
+__pycache__/
+*.pyc

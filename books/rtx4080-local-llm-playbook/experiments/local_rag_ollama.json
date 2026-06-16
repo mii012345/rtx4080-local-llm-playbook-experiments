@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-06-16T14:42:01.763504+00:00",
+  "label": "rag_from_public_fixture_retrieval",
+  "source_dir": "fixtures/rag_docs",
+  "source_note": "Synthetic public fixtures, not book manuscript text.",
+  "embed_model": "nomic-embed-text:latest",
+  "generate_model": "qwen3.5:4b",
+  "question": "RTX 4080でRAGの回答生成を動かすなら、OllamaとvLLMをどう使い分けるべき？",
+  "chunk_count": 8,
+  "top_k": 4,
+  "retrieved": [
+    {
+      "score": 0.4391,
+      "path": "ollama-vllm-notes.md",
+      "heading": "Synthetic local LLM notes for public RAG reproduction",
+      "text_preview": "vLLM is better treated as a fixed API server. It exposes an OpenAI-compatible API and is useful when a RAG service or multiple agents need to send repeated requests to the same model."
+    },
+    {
+      "score": 0.4231,
+      "path": "ollama-vllm-notes.md",
+      "heading": "Synthetic local LLM notes for public RAG reproduction",
+      "text_preview": "On a 16GB GPU, model size is not the only constraint. vLLM can reserve substantial VRAM for KV cache, so context length and concurrency settings must be checked."
+    },
+    {
+      "score": 0.3917,
+      "path": "ollama-vllm-notes.md",
+      "heading": "Synthetic local LLM notes for public RAG reproduction",
+      "text_preview": "These notes are synthetic fixtures for the public experiment repository. They are not copied from the book manuscript."
+    },
+    {
+      "score": 0.3898,
+      "path": "task-routing-notes.md",
+      "heading": "Synthetic task routing notes",
+      "text_preview": "For code patch suggestions, a code-oriented local model can respond quickly, but the output still needs human review. Fast code generation can also produce over-engineered or incorrect patches."
+    }
+  ],
+  "generation": {
+    "wall_sec": 6.305,
+    "eval_count": 512,
+    "eval_sec": 3.703,
+    "tok_per_sec_eval": 138.27,
+    "empty": true,
+    "response": "",
+    "response_preview": ""
+  },
+  "total_wall_sec": 7.223
+}

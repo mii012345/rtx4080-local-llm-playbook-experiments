@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプルタイマー</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --primary-color: #4a90e2;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .timer-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .time-display {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            font-variant-numeric: tabular-nums; /* 数字の幅を均一にする */
+            letter-spacing: 5px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s, opacity 0.2s;
+            color: white;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #start-btn {
+            background-color: var(--success-color);
+        }
+
+        #stop-btn {
+            background-color: var(--danger-color);
+        }
+
+        #reset-btn {
+            background-color: var(--primary-color);
+        }
+
+        /* 停止中の表示用スタイル */
+        .paused {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="timer-container">
+        <h1>タイマー</h1>
+        <div class="time-display" id="display">00:00</div>
+        
+        <div class="controls">
+            <button id="start-btn">開始</button>
+            <button id="stop-btn" disabled>停止</button>
+            <button id="reset-btn">リセット</button>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 0; // 残り秒数
+        let timerInterval = null; // タイマー ID
+        let isRunning = false; // 実行中フラグ
+
+        const displayElement = document.getElementById('display');
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // 秒数を 分：秒の形式に変換して表示する関数
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // 表示を更新する関数
+        function updateDisplay() {
+            displayElement.textContent = formatTime(timeLeft);
+        }
+
+        // タイマーをカウントダウンさせる関数
+        function startTimer() {
+            if (isRunning) return;
+
+            // 初期値を 0 秒にする（リセット状態からスタート）
+            timeLeft = 0; 
+            
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateDisplay();
+                } else {
+                    // 0 秒になった場合
+                    stopTimer();
+                    // 完了メッセージを表示するオプション（今回はシンプルに停止のみ）
+                    displayElement.textContent = "00:00";
+                }
+            }, 1000);
+
+            isRunning = true;
+            
+            // ボタンの状態を切り替える
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            resetBtn.disabled = false;
+        }
+
+        // タイマーを停止させる関数
+        function stopTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isRunning = false;
+
+            // ボタンの状態を切り替える
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            resetBtn.disabled = false;
+        }
+
+        // タイマーをリセットさせる関数
+        function resetTimer() {
+            stopTimer();
+            timeLeft = 0;
+            updateDisplay();
+        }
+
+        // イベントリスナーの登録
+        startBtn.addEventListener('click', startTimer);
+        stopBtn.addEventListener('click', stopTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        // ページ読み込み時に初期表示
+        updateDisplay();
+
+    </script>
+</body>
+</html>
